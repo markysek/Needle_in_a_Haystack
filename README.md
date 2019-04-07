@@ -43,8 +43,8 @@ Initially, 5 models were fed with original set of data (base case). Additional 7
 
 | Model                                     | Accuracy  | Precision | Recall  | F1 score | AUPRC  |
 | ----------------------------------------- | --------- | --------- | ------- | ---------|------- |
-| XGBoost model - base case scenario        | 99.96     | 97.24     | 68.78   | 80.57    | 66.92  |
-| XGBoost model - with engineered features  | 100.00    | 99.03     | 100.00  | 99.51    | 99.03  |
+| XGBoost model - base case scenario        |     99.96 |     97.24 |   68.78 |    80.57 |  66.92 |
+| XGBoost model - with engineered features  |    100.00 |     99.03 |  100.00 |    99.51 |  99.03 |
 
 ## Conclusion
 The best two models for detecting and predicting fraudulent transactions proved to be Random Forest and XGBoost with a Decision Tree as a base model. While reaching close-to-100% levels of F1 score, Precision, Recall and AUPRC, the interpretability of the model is not so straight-forward. The next steps would be to use ideally SHAP package using the Shappley values that consistently evaluate the feature importance while not depending on the order in which the features were added/evaluated or how deep in the decision tree are they positioned. The interpretability of the model is one of the key aspects of model validation framework whose intention is, among other, to check whether a model being used by financial institution or a provider of behavioral solution services is compliant with anti-discrimination laws.
