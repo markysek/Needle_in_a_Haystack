@@ -41,6 +41,10 @@ For each of the oversampled/not-oversampled and encoded/not-encoded scenarios, 5
 ## Final approach and results
 Initially, 5 models were fed with original set of data (base case). Additional 7 features were created with the aim to achieve better model classification results. The key metrics to measure the performance were Precision, Recall and F1 score. Random Forest and XGBoost models delivered the best results.  
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 | Model | Accuracy | Precision | Recall | F1 score | AUPRC |
 |---|---|---|---|---|
