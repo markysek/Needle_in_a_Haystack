@@ -1,4 +1,5 @@
-# Needle in a Haystack - Fraud Detection project summary (for code and visualizations please see Jupyter NTB)
+# Needle in a Haystack - Fraud Detection project summary 
+(for code and visualizations please see Jupyter NTB)
 
 ## Abstract
 The ultimate goal of the project is to develop a counter-solution to account takeover attacks in payment services. The primary goal is to build a model that could identify patterns in data and spot fraudulent transactions with the highest hit-rate possible. The secondary goal is to find use of it for businesses based on their risk-aversion level:
