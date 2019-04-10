@@ -51,9 +51,11 @@ F1 score = harmonic mean of Precision and Recall -> to find the right balance of
 | XGBoost model - base case scenario        |     99.96 |     97.24 |   68.78 |    80.57 |  66.92 |
 | XGBoost model - with engineered features  |    100.00 |     99.03 |  100.00 |    99.51 |  99.03 |
 
-Confusion matrix:
-[[158859      2]
- [     0    205]]
+
+| Confusion matrix                     | Predicted value - genuine transaction  | True value - fraudulent transaction |
+| ------------------------------------ | -------------------------------------- | ----------------------------------- | 
+| True value - genuine transaction     |                               158 859  |                                   2 |   
+| True value - fraudulent transaction  |                                     0  |                                 205 |  
 
 The confusion matrix shows that while 158,859 cases were correctly classified as non-fraudulent and 205 correctly classified as fraudulent, 2 cases got misclassified as being fraudulent when they weren't and 0 fraud cases were missed. 
 
