@@ -39,13 +39,25 @@ For each of the oversampled/not-oversampled and encoded/not-encoded scenarios, 5
 - multi-layer perceptron
 - The random forest model and the XGBoost delivered the best results, hence the notebook focuses only on the two beforehand mentioned.
 
-## Final approach and results
-Initially, 5 models were fed with original set of data (base case). Additional 7 features were created with the aim to achieve better model classification results. The key metrics to measure the performance were Precision, Recall and F1 score. Random Forest and XGBoost models delivered the best results.  
+## Final approach and the results
+Initially, 5 models were fed with original set of data (base case). Additional 7 features were created with the aim to achieve better model classification results. The key metrics to measure the performance were Precision, Recall and F1 score. Random Forest and XGBoost models delivered the best results. 
+
+Precision = what percentage of the transactions predicted as being fraudulent were fraudulent in reality
+Recall = the percentage of real fraud cases the model is able to catch
+F1 score = harmonic mean of Precision and Recall -> to find the right balance of the two metrics
 
 | Model                                     | Accuracy  | Precision | Recall  | F1 score | AUPRC  |
 | ----------------------------------------- | --------- | --------- | ------- | ---------|------- |
 | XGBoost model - base case scenario        |     99.96 |     97.24 |   68.78 |    80.57 |  66.92 |
 | XGBoost model - with engineered features  |    100.00 |     99.03 |  100.00 |    99.51 |  99.03 |
 
+Confusion matrix:
+[[158859      2]
+ [     0    205]]
+
+The confusion matrix shows that while 158,859 cases were correctly classified as non-fraudulent and 205 correctly classified as fraudulent, 2 cases got misclassified as being fraudulent when they weren't and 0 fraud cases were missed. 
+
+The seriousness of misclassification depends on the use case as well as on the value of the misclassified transactions. In this case, the model is more conservative and identified two cases as being fraudulent when they were not. The implication in real life would be probably blocking or at least suspending such transactions. It is assumed that payment service provider would like to avoid this type of misclassifications not to create unnecessary friction during customer's shopping experience which could also create a reputational risk.
+
 ## Conclusion
-The best two models for detecting and predicting fraudulent transactions proved to be Random Forest and XGBoost with a Decision Tree as a base model. While reaching close-to-100% levels of F1 score, Precision, Recall and AUPRC, the interpretability of the model is not so straight-forward. The next steps would be to use ideally SHAP package using the Shappley values that consistently evaluate the feature importance while not depending on the order in which the features were added/evaluated or how deep in the decision tree are they positioned. The interpretability of the model is one of the key aspects of model validation framework whose intention is, among other, to check whether a model being used by financial institution or a provider of behavioral solution services is compliant with anti-discrimination laws.
+The best two models for detecting and predicting fraudulent transactions proved to be Random Forest and XGBoost with a Decision Tree as a base model. While reaching close-to-100% levels of F1 score, Precision, Recall and AUPRC, the interpretability of the model is not as straight-forward as for a logistic regression for example. The next steps would be to use ideally SHAP package using the Shapley values that consistently evaluate the feature importance while not depending on the order in which the features were added/evaluated or how deep in the decision tree are they positioned. The interpretability of the model is one of the key aspects of model validation framework whose intention is, among other, to check whether a model being used by financial institution or a provider of behavioral solution services is compliant with anti-discrimination laws.
