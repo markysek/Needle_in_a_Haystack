@@ -1,4 +1,4 @@
-# Needle in a Haystack - Fraud Detection project summary 
+# Needle in a Haystack - Fraud Detection project summary (project in progress)
 (for code and visualizations please see Jupyter NTB)
 
 ## Abstract
